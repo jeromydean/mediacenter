@@ -35,4 +35,3 @@ public partial class App : Application
     services.AddTransient<MainView>();
   }
 }
-

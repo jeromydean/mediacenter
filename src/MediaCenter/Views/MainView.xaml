@@ -54,6 +54,7 @@
               x:Name="scrollViewer"
               CanContentScroll="True" 
               Padding="{TemplateBinding Padding}"
+              IsDeferredScrollingEnabled="True"
               Focusable="False">
               <ItemsPresenter />
             </ScrollViewer>
