@@ -28,7 +28,7 @@ public partial class App : Application
     services.AddTransient<IMovieService, MovieService>((sp) =>
     {
       //TODO read this in from the config
-      return new MovieService(Path.Combine(Environment.CurrentDirectory,@"..\..\..\..\..\images"));
+      return new MovieService(Path.Combine(Environment.CurrentDirectory,@"..\..\..\..\..\..\images"));
     });
 
     services.AddTransient<MainViewModel>();
