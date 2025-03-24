@@ -1,0 +1,65 @@
+﻿<Window 
+  x:Class="MediaCenter.Views.MainView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:local="clr-namespace:MediaCenter.Views"
+  xmlns:viewModels="clr-namespace:MediaCenter.ViewModels"
+  xmlns:behaviors="clr-namespace:MediaCenter.Behaviors"
+  xmlns:controls="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
+  xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+  mc:Ignorable="d"
+  d:DataContext="{d:DesignInstance IsDesignTimeCreatable=False, Type={x:Type viewModels:MainViewModel}}"
+  Title="MainView"
+  WindowStartupLocation="CenterScreen"
+  WindowState="Maximized">
+  <i:Interaction.Triggers>
+    <i:EventTrigger EventName="Loaded">
+      <i:InvokeCommandAction Command="{Binding ViewLoadedCommand}" />
+    </i:EventTrigger>
+  </i:Interaction.Triggers>
+  <Grid>
+    <ItemsControl
+      ItemsSource="{Binding ImageUris}">
+      <i:Interaction.Behaviors>
+        <behaviors:ItemsControlKeyPressScrollViewerBehavior />
+      </i:Interaction.Behaviors>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <Image
+            Source="{Binding}"
+            Width="200"
+            Height="200"
+            Margin="5"
+            Focusable="True" />
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+          <controls:VirtualizingWrapPanel
+            Orientation="Horizontal"
+            VirtualizingStackPanel.VirtualizationMode="Recycling">
+          </controls:VirtualizingWrapPanel>
+        </ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.Template>
+        <ControlTemplate
+          TargetType="ItemsControl">
+          <Border
+            BorderThickness="{TemplateBinding BorderThickness}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            Background="{TemplateBinding Background}">
+            <ScrollViewer
+              x:Name="scrollViewer"
+              CanContentScroll="True" 
+              Padding="{TemplateBinding Padding}"
+              Focusable="False">
+              <ItemsPresenter />
+            </ScrollViewer>
+          </Border>
+        </ControlTemplate>
+      </ItemsControl.Template>
+    </ItemsControl>
+  </Grid>
+</Window>
