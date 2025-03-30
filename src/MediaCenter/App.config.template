@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="ContentImageFolderLocation" value="C:\_images\"/>
+    <add key="UserImageFolderLocation" value="C:\_images\UserImages\"/>
+    <add key="MovieFolders" value="C:\Movies\; C:\HD Movies\;" />
+    <add key="TVShowFolders" value="C:\TV\;" />
+    <add key="RipTypes" value="DSR; PDTV; HDTV; WEBRip; DVDRip; BDRip; LDRip; VHSRip; HDDVD; BluRay" />
+    <add key="VideoExtensions" value=".avi; .flv; .mkv; .mp4; .mpg; .ogm"/>
+    <add key="DefaultUser" value="1000" />
+    <add key="MPCLocation" value="C:\Program Files\MPC-HC\mpc-hc64.exe" />
+    <add key="SeriesCoverDisplayLimit" value="7" />
+    <add key="SummaryTrimSize" value="500" />
+  </appSettings>
+  <connectionStrings>
+    <add name="ConnectionString" connectionString="data source=.; initial catalog=MovieDB; Integrated Security=SSPI;" />
+  </connectionStrings>
+</configuration>
