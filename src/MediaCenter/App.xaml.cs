@@ -23,13 +23,9 @@ public partial class App : Application
     mainView.Show();
   }
 
-  private void ConfigureServices(IServiceCollection services)
+  private static void ConfigureServices(IServiceCollection services)
   {
-    services.AddTransient<IMovieService, MovieService>((sp) =>
-    {
-      //TODO read this in from the config
-      return new MovieService(Path.Combine(Environment.CurrentDirectory,@"..\..\..\..\..\..\images"));
-    });
+    services.AddTransient<IMovieService, MovieService>(_ => new MovieService(Settings.ContentImageFolderLocation));
 
     services.AddTransient<MainViewModel>();
     services.AddTransient<MainView>();

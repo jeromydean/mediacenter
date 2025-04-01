@@ -30,7 +30,7 @@
           <Image
             Source="{Binding}"
             Width="200"
-            Height="200"
+            Height="285"
             Margin="5"
             Focusable="True" />
         </DataTemplate>
