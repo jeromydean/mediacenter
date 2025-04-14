@@ -1,0 +1,39 @@
+﻿<mahDialogs:CustomDialog
+  x:Class="MediaCenter.Views.MovieDialogView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mahDialogs="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:local="clr-namespace:MediaCenter.Views"
+  xmlns:viewModels="clr-namespace:MediaCenter.ViewModels"
+  mc:Ignorable="d"
+  d:DataContext="{d:DesignInstance IsDesignTimeCreatable=False, Type={x:Type viewModels:MovieDialogViewModel}}"
+  mahDialogs:DialogParticipation.Register="{Binding}"
+  Title="MovieDialogView"
+  Height="450"
+  Width="800">
+  <StackPanel>
+    <Button
+      Content="Play"
+      Command="{Binding PlayCommand}" />
+    <TextBlock
+      TextWrapping="Wrap">
+      <Run>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+      </Run>
+      <LineBreak />
+      <Run>
+        Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+      </Run>
+      <LineBreak />
+      <LineBreak />
+      <LineBreak />
+      <LineBreak />
+      <LineBreak />
+    </TextBlock>
+    <Button
+      Content="Close"
+      Command="{Binding CloseCommand}" />
+  </StackPanel>
+</mahDialogs:CustomDialog>
