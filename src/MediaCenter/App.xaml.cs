@@ -29,6 +29,8 @@ public partial class App : System.Windows.Application
     services.AddTransient<IMovieService, MovieService>(_ => new MovieService(Settings.ContentImageFolderLocation));
     //services.AddTransient<IMovieService, MovieService>(_ => new MovieService(@"C:\Users\user\source\repos\images"));
 
+    services.AddTransient<IUnitOfWorkProvider, UnitOfWorkProvider>();
+
     services.AddTransient<MainViewModel>();
     services.AddTransient<MainView>();
 
