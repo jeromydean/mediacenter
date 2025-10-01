@@ -12,9 +12,17 @@ namespace MediaCenter.DataAccess.Services
 
       using (SqlConnection con = new SqlConnection(connectionString))
       {
-        await con.OpenAsync();
-        returnValue = await work(con);
-        await con.CloseAsync();
+        try
+        {
+          await con.OpenAsync();
+          returnValue = await work(con);
+          await con.CloseAsync();
+        }
+        catch (Exception e)
+        {
+          Console.WriteLine(e);
+          throw;
+        }
       }
 
       return returnValue;

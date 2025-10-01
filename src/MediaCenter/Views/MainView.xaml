@@ -112,6 +112,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                   </Grid.RowDefinitions>
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -120,47 +121,56 @@
                   <Label
                     Grid.Row="0"
                     Grid.Column="0"
-                    Content="Release Date:" />
+                    Content="Title:" />
                   <TextBox
                     Grid.Row="0"
                     Grid.Column="1"
-                    Text="Lorem ipsum dolor sit amet consectetur adipiscing elit." />
+                    Text="{Binding Path=/Title}" />
 
                   <Label
                     Grid.Row="1"
+                    Grid.Column="0"
+                    Content="Year:" />
+                  <TextBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding Path=/Year}" />
+
+                  <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Content="Categories:" />
+                  <TextBox
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="{Binding Path=/CategoryList}" />
+
+                  <Label
+                    Grid.Row="3"
                     Grid.Column="0"
                     Content="Actors:" />
                   <TextBox
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Text="Lorem ipsum dolor sit amet consectetur adipiscing elit." />
-
-                  <Label
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Content="Title:" />
-                  <TextBox
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Text="Lorem ipsum dolor sit amet consectetur adipiscing elit." />
-
-                  <Label
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    Content="Notes:" />
-                  <TextBox
                     Grid.Row="3"
                     Grid.Column="1"
-                    Text="Lorem ipsum dolor sit amet consectetur adipiscing elit." />
+                    Text="{Binding Path=/ActorList}" />
 
                   <Label
                     Grid.Row="4"
                     Grid.Column="0"
-                    Content="Whatever:" />
+                    Content="Rating:" />
                   <TextBox
                     Grid.Row="4"
                     Grid.Column="1"
-                    Text="Lorem ipsum dolor sit amet consectetur adipiscing elit." />
+                    Text="{Binding Path=/Rating}" />
+
+                  <Label
+                      Grid.Row="5"
+                      Grid.Column="0"
+                      Content="Summary:" />
+                  <TextBox
+                      Grid.Row="5"
+                      Grid.Column="1"
+                      Text="{Binding Path=/Summary}" />
                 </Grid>
               </ToolTip>
             </Image.ToolTip>

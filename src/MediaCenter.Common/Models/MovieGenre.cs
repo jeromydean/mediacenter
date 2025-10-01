@@ -1,8 +1,8 @@
 ﻿namespace MediaCenter.Common.Models
 {
-  public class MovieCast
+  public class MovieGenre
   {
     public long movie_id { get; set; }
-    public string actor_name { get; set; }
+    public long genre_id { get; set; }
   }
 }
