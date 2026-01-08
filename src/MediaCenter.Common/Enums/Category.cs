@@ -11,6 +11,8 @@ namespace MediaCenter.Common.Enums
     [Description("New Release")]
     NewRelease = 3,
     [Description("Catalog")]
-    Catalog = 4
+    Catalog = 4,
+    [Description("High School")]
+    HighSchool = 4
   }
 }
